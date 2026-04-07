@@ -1,7 +1,9 @@
 <script setup lang="ts">
-
+import { Button } from '@/components/ui/button';
 </script>
 
 <template>
-    <h1>Landing page</h1>
+    <div>
+        <Button variant="destructive">Click me</Button>
+    </div>
 </template>
