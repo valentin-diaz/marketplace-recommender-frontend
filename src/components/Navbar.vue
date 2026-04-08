@@ -12,36 +12,29 @@ import {
 } from '@/components/ui/navigation-menu'
 </script>
 <template>
-    <header class="flex items-center justify-center">
+    <div class="flex items-center justify-center">
         <NavigationMenu>
             <NavigationMenuList>
             <NavigationMenuItem>
-                <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Categorías</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                <NavigationMenuLink>Link</NavigationMenuLink>
+                <NavigationMenuLink>Categoría</NavigationMenuLink>
+                <NavigationMenuLink>Categoría</NavigationMenuLink>
+                <NavigationMenuLink>Categoría</NavigationMenuLink>
                 </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                <a href="/docs">Docs</a>
+                <a href="/docs">Vender</a>
                 </NavigationMenuLink>
             </NavigationMenuItem>
+            
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                <a href="/docs">Docs</a>
-                </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-                <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                <a href="/docs">Docs</a>
-                </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-                <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                <a href="/docs">Docs</a>
+                <a href="/docs">Recomendaciones</a>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
-    </header>
+    </div>
 </template>
