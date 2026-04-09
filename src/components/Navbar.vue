@@ -10,28 +10,26 @@ import {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+import { RouterLink } from 'vue-router';
 </script>
 <template>
     <div class="flex items-center justify-center">
         <NavigationMenu>
             <NavigationMenuList>
             <NavigationMenuItem>
-                <NavigationMenuTrigger>Categorías</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                <NavigationMenuLink>Categoría</NavigationMenuLink>
-                <NavigationMenuLink>Categoría</NavigationMenuLink>
-                <NavigationMenuLink>Categoría</NavigationMenuLink>
-                </NavigationMenuContent>
+                <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
+                    <RouterLink to="/explore">Recomendaciones</RouterLink>
+                </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                <a href="/docs">Vender</a>
+                    <RouterLink to="/catalog">Libros</RouterLink>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                <a href="/docs">Recomendaciones</a>
+                    <RouterLink to="/vender">Referencias</RouterLink>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             </NavigationMenuList>

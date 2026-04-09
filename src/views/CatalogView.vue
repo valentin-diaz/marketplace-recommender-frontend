@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import Container from '@/components/Container.vue';
+
 
 </script>
 
 <template>
-    <h1>Catalog</h1>
+    <main>
+        <Container>
+            <h1 class="text-3xl font-bold text-center">Catálogo de Libros</h1>
+        </Container>    
+    </main>
 </template>
