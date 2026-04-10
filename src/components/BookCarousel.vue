@@ -19,9 +19,9 @@ onMounted(async () => {
 </script>
 <template>
   <Carousel
-    class="w-full max-w-xl mx-auto my-16"
+    class="max-w-xl mx-auto my-16"
     :opts="{
-      align: 'center',
+      align: 'start',
       loop: true,
       slidesToScroll: 'auto'
     }"
@@ -34,7 +34,7 @@ onMounted(async () => {
             <img 
                 :src="book.cover_image" 
                 alt="Book Cover" 
-                class="h-full w-auto rounded-lg shadow-black/95" 
+                class="h-full w-auto rounded-lg shadow-black" 
             />
             </div>
         </CarouselItem>
