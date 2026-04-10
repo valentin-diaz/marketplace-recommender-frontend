@@ -18,7 +18,7 @@ import { RouterLink } from 'vue-router';
             <NavigationMenuList>
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                    <RouterLink to="/explore">Recomendaciones</RouterLink>
+                    <RouterLink to="/select-user">Recomendaciones</RouterLink>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>

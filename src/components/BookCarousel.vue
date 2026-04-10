@@ -19,7 +19,7 @@ onMounted(async () => {
 </script>
 <template>
   <Carousel
-    class="max-w-xl mx-auto my-16"
+    class="max-w-xl mx-auto my-8"
     :opts="{
       align: 'start',
       loop: true,

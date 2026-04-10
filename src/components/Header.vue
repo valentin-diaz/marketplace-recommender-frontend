@@ -12,13 +12,13 @@ import SearchBar from './SearchBar.vue';
     <Container>
         <div class="flex justify-between gap-x-2">
         
-        <div class="flex-1 place-content-center text-center">
+        <div class="flex-1 place-content-center text-left">
             <h1 class="text-2xl font-bold">
-                <RouterLink to="/">Kindle <br> Recommender</RouterLink>
-                    </h1>
+                <RouterLink to="/">Kindle Recommender</RouterLink>
+            </h1>
         </div>
         <div class="flex-2 flex items-center justify-center flex-col gap-y-2">
-            <SearchBar />
+            <!-- <SearchBar /> -->
             <Navbar />
         </div>
         <div class="flex-1 text-center place-content-center">Perfil</div>
