@@ -2,10 +2,11 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { getFeaturedBooks } from '@/services/api';
+import type { Book } from '@/types/api/book';
 import { onMounted, reactive } from 'vue';
 
 const booksState = reactive({
-  books: [] as Array<{ id: number; title: string; author: string; cover_image: string }>,
+  books: [] as Array<Book>,
   isLoading: true,
 });
 
@@ -32,7 +33,7 @@ onMounted(async () => {
             class="flex h-48 items-center justify-center py-1" 
             >  
             <img 
-                :src="book.cover_image" 
+                :src="book.coverImage" 
                 alt="Book Cover" 
                 class="h-full w-auto rounded-lg shadow-black" 
             />
