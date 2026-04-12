@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
+import { RouterLink } from 'vue-router'
 
 // Definición mínima de nuestro usuario
 export interface UserType {
@@ -29,13 +30,13 @@ export const columns: ColumnDef<UserType>[] = [
 
       return h('div', { class: 'relative' }, [
         h(Button, {
-          variant: 'outline',
           size: 'sm',
-          onClick: () => {
-            console.log('Iniciando personificación para el ID:', user.id)
-            // Aquí irá tu lógica real para personificar (ej. llamada a la API, cambio de store, etc.)
-          }
-        }, () => 'Personificar')
+          asChild: true, // <-- Delega el renderizado al componente hijo
+        }, () => 
+          h(RouterLink, { 
+            to: `/recomendaciones/${user.id}` 
+          }, () => 'Personificar')
+        )
       ])
     },
   },

@@ -63,7 +63,7 @@ onMounted(() => {
 <template>
   <Container>
     <h1 class="mb-6 text-3xl font-bold text-center">Selecciona un usuario</h1>
-    <p class="text-center text-muted-foreground mb-8">
+    <p class="text-center text-muted-foreground mb-2">
       Selecciona un usuario para ver las recomendaciones personalizadas basadas en su historial de compras.
     </p>
     <div class="max-w-3xl mx-auto">
@@ -71,7 +71,7 @@ onMounted(() => {
       <Input
         v-model="searchQuery"
         placeholder="Buscar por categoría"
-        class="max-w-sm"
+        class="w-full"
       />
       <span v-if="loading" class="text-sm text-muted-foreground animate-pulse">
         Cargando...
