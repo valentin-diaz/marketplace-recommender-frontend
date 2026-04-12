@@ -2,7 +2,7 @@
 import { onMounted, reactive, ref, watch } from 'vue'
 import DataTable from '@/components/DataTable.vue'
 import { columns } from '@/components/SelectUser/columns'
-import type { UserType } from '@/components/SelectUser/columns'
+import type { UserType } from '@/types/api/user'
 import Container from '@/components/Container.vue'
 import { getUsers } from '@/services/api'
 import Input from '@/components/ui/input/Input.vue'

@@ -1,6 +1,7 @@
 import client from './client'
 import books from '@/mocks/books.json'
 import users from '@/mocks/users.json'
+import type { Book } from '@/types/api/book'
 
 export const getFeaturedBooks = async () => {
   try {
@@ -32,6 +33,19 @@ export const getUsers = async (offset: number, limit: number, search?: string) =
     return response.data
   } catch (error) {
     console.error('Error fetching users:', error)
+    throw error
+  }
+}
+
+export const getYouWouldLoveBook = async (userId: number) => {
+  try {
+    return {
+      data: books.data[Math.floor(Math.random() * books.data.length)] as Book,
+    }
+    const response = await client.get(`/users/${userId}/you-would-love`)
+    return response.data
+  } catch (error) {
+    console.error(`Error fetching recommendation for user ${userId}:`, error)
     throw error
   }
 }

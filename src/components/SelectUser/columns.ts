@@ -2,12 +2,8 @@ import { h } from 'vue'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
 import { RouterLink } from 'vue-router'
+import type { UserType } from '@/types/api/user'
 
-// Definición mínima de nuestro usuario
-export interface UserType {
-  id: string,
-  mostReadCategory: string,
-}
 
 export const columns: ColumnDef<UserType>[] = [
   {

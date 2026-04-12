@@ -12,7 +12,7 @@ import { RouterLink } from 'vue-router';
             <p class="text-lg text-center mt-4 max-w-2xl mx-auto">Un simulador de recomendaciones para los libros de la tienda de Kindle, del dataset Amazon Reviews'23</p>
             <div class="flex justify-center mt-8">
                 <Button as-child variant="default" class="bg-amber-800 hover:bg-amber-900 text-white">
-                    <RouterLink to="/explore">Explorar Recomendaciones</RouterLink>
+                    <RouterLink to="/select-user">Explorar Recomendaciones</RouterLink>
                 </Button>
             </div>
 
