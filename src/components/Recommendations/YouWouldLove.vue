@@ -4,6 +4,7 @@ import Container from '../Container.vue';
 import { onMounted, reactive } from 'vue';
 import type { Book } from '@/types/api/book';
 import Explanation from './Explanation.vue';
+import Separator from '../ui/separator/Separator.vue';
 
 const props = defineProps<{
     userId: string;
