@@ -13,10 +13,22 @@ export const getFeaturedBooks = async () => {
   }
 }
 
-export const getUsers = async () => {
+export const getUsers = async (offset: number, limit: number, search?: string) => {
   try {
-    return users
-    const response = await client.get('/users')
+    if (search) {
+      const filteredUsers = users.data.filter(user =>
+        user.mostReadCategory.toLowerCase().includes(search.toLowerCase())
+      )
+      return {
+        data: filteredUsers.slice(offset, offset + limit),
+        total: filteredUsers.length,
+      }
+    }
+    return {
+      data: users.data.slice(offset, offset + limit),
+      total: users.data.length,
+    }
+    const response = await client.get('/users', { params: { offset, limit, search } })
     return response.data
   } catch (error) {
     console.error('Error fetching users:', error)
