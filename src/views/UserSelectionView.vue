@@ -23,12 +23,10 @@ let searchTimeout: ReturnType<typeof setTimeout>
 const fetchUsers = async () => {
     loading.value = true // Asegúrate de activar el loading aquí
     try {
-        // En una API real, estos parámetros harían que el backend devuelva solo 10 items
         const offset = pagination.value.pageIndex * pagination.value.pageSize
         const limit = pagination.value.pageSize
         const search = searchQuery.value // Lo que haya escrito el usuario
 
-        // Llamamos a la API real pasándole todo el contexto
         const response = await getUsers(offset, limit, search)
         data.value = response.data
 
