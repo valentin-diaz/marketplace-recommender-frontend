@@ -38,6 +38,16 @@ export const getBooks = async(offset: number, limit: number, search?: string) =>
   }
 }
 
+export const getBookDetails = async (bookId: string) => {
+  try {
+    const response = await client.get(`/books/${bookId}`)
+    return response.data
+  } catch (error) {
+    console.error('Error fetching book details:', error)
+    throw error
+  }
+}
+
 export const getUsers = async (offset: number, limit: number, search?: string) => {
   try {
     if (search) {
@@ -70,6 +80,17 @@ export const getYouWouldLoveBook = async (userId: number) => {
     return response.data
   } catch (error) {
     console.error(`Error fetching recommendation for user ${userId}:`, error)
+    throw error
+  }
+}
+
+export const getSimilarBooks = async (bookId: string) => {
+  return books.data as Book[]
+  try {
+    const response = await client.get(`/books/${bookId}/similar`)
+    return response.data
+  } catch (error) {
+    console.error('Error fetching similar books:', error)
     throw error
   }
 }

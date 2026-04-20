@@ -1,3 +1,4 @@
+import BookView from '@/views/BookView.vue'
 import CatalogView from '@/views/CatalogView.vue'
 import LandingView from '@/views/LandingView.vue'
 import UserRecommendationsView from '@/views/UserRecommendationsView.vue'
@@ -27,6 +28,11 @@ const router = createRouter({
       name: 'user-recommendations',
       component: UserRecommendationsView,
     },
+    {
+      path: '/books/:id',
+      name: 'book-details',
+      component: BookView,
+    }
   ],
 })
 
