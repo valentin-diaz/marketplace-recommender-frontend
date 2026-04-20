@@ -18,7 +18,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <Card class="p-0 gap-0 rounded-none">
+  <router-link :to="`/books/${props.book.id}`" class="w-full">
+  <Card class="p-0 gap-0 rounded-none hover:shadow-lg transition-shadow duration-300">
     <CardHeader class="w-full p-0 mb-0">
         <div class="h-80">
         <img 
@@ -33,4 +34,5 @@ const props = defineProps({
       <CardDescription>{{ props.book.author }}</CardDescription>
     </CardContent>
   </Card>
+    </router-link>
 </template>

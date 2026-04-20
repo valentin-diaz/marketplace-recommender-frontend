@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Input from '@/components/ui/input/Input.vue';
+const model = defineModel<string>();
 </script>
 
 <template>
-    <Input class="bg-white" placeholder="Buscar libros"/>
+    <Input v-model="model" class="bg-white" placeholder="Buscar libros"/>
 </template>
