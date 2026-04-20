@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-6">
         <BookItem v-for="book in props.books" :key="book.id" :book="book"/>
     </div>
 </template>

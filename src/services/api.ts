@@ -16,20 +16,20 @@ export const getFeaturedBooks = async () => {
 
 export const getBooks = async(offset: number, limit: number, search?: string) => {
   try {
-    if (search) {
-      const filteredBooks = books.data.filter(book =>
-        book.title.toLowerCase().includes(search.toLowerCase()) ||
-        book.author.toLowerCase().includes(search.toLowerCase())
-      )
-      return {
-        data: filteredBooks.slice(offset, offset + limit),
-        total: filteredBooks.length,
-      }
-    }
-    return {
-      data: books.data.slice(offset, offset + limit),
-      total: books.data.length,
-    }
+    // if (search) {
+    //   const filteredBooks = books.data.filter(book =>
+    //     book.title.toLowerCase().includes(search.toLowerCase()) ||
+    //     book.author.toLowerCase().includes(search.toLowerCase())
+    //   )
+    //   return {
+    //     data: filteredBooks.slice(offset, offset + limit),
+    //     total: filteredBooks.length,
+    //   }
+    // }
+    // return {
+    //   data: books.data.slice(offset, offset + limit),
+    //   total: books.data.length,
+    // }
     const response = await client.get('/books', { params: { offset, limit, search } })
     return response.data
   } catch (error) {

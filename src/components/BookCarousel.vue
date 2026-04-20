@@ -33,7 +33,7 @@ onMounted(async () => {
             class="flex h-48 items-center justify-center py-1" 
             >  
             <img 
-                :src="book.coverImage" 
+                :src="book.image_url" 
                 alt="Book Cover" 
                 class="h-full w-auto rounded-lg shadow-black" 
             />

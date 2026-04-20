@@ -19,19 +19,19 @@ const props = defineProps({
 
 <template>
   <router-link :to="`/books/${props.book.id}`" class="w-full">
-  <Card class="p-0 gap-0 rounded-none hover:shadow-lg transition-shadow duration-300">
+  <Card class="h-full p-0 gap-0 rounded-none hover:shadow-lg transition-shadow duration-300">
     <CardHeader class="w-full p-0 mb-0">
         <div class="h-80">
         <img 
-            :src="props.book.coverImage" 
+            :src="props.book.image_url" 
             alt="Book Cover" 
             class="h-full w-full object-cover" 
         />
         </div>
     </CardHeader>
-    <CardContent class="px-6 py-4 mt-0">
+    <CardContent class="px-3 py-3 mt-0">
       <CardTitle class="mb-4">{{ props.book.title }}</CardTitle>
-      <CardDescription>{{ props.book.author }}</CardDescription>
+      <CardDescription>{{ props.book.author_name }}</CardDescription>
     </CardContent>
   </Card>
     </router-link>

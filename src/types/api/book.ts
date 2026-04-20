@@ -1,8 +1,8 @@
 export interface Book {
   id: number;
   title: string;
-  author: string;
+  author_name: string;
   description: string;
-  coverImage: string;
+  image_url: string;
   categories: string[];
 }

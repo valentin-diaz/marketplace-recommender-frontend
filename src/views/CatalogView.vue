@@ -21,7 +21,7 @@ const loading = ref(true);
 const searchQuery = ref('');
 const pagination = ref({
     pageIndex: 1,
-    pageSize: 2,
+    pageSize: 20,
 });
 
 const fetchBooks = async () => {
@@ -32,8 +32,8 @@ const fetchBooks = async () => {
         const search = searchQuery.value;
 
         const response = await getBooks(offset, limit, search);
-        books.value = response.data;
-        totalItems.value = response.total   ;
+        books.value = response.books;
+        totalItems.value = response.total;
     } catch (error) {
         console.error('Error fetching books:', error);
     } finally {

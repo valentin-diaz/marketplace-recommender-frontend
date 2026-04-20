@@ -43,11 +43,11 @@ onMounted(() => {
             <div class="place-items-center">
                 <img 
                     class="h-80 w-auto"
-                    :src="bookState.recommendation.coverImage" :alt="bookState.recommendation.title">
+                    :src="bookState.recommendation.image_url" :alt="bookState.recommendation.title">
             </div>
             <div class="flex flex-col justify-center gap-4 align-center text-center">
                 <h3 class="text-3xl font-bold">{{ bookState.recommendation.title }}</h3>
-                <p class="text-lg">{{ bookState.recommendation.author }}</p>
+                <p class="text-lg">{{ bookState.recommendation.author_name }}</p>
             </div>
         </div>
 
