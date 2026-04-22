@@ -28,7 +28,8 @@ const fetchUsers = async () => {
         const search = searchQuery.value // Lo que haya escrito el usuario
 
         const response = await getUsers(offset, limit, search)
-        data.value = response.data
+        data.value = response.users
+        console.log('Usuarios obtenidos:', data.value)
 
         pageCount.value = Math.ceil(response.total / limit)
 

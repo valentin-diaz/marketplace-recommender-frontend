@@ -14,8 +14,8 @@ export const columns: ColumnDef<UserType>[] = [
     accessorKey: 'mostReadCategory',
     header: 'Categoría Más Leída',
     cell: ({ row }) => {
-      const category = row.original.mostReadCategory
-      return h('span', { class: 'font-regular' }, category || 'N/A')
+      const category = row.original.top_category
+      return h('span', { class: 'font-regular' }, category.replace('[', '').replace(']', '') || 'N/A')
     }
   },
   {
