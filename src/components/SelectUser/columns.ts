@@ -3,6 +3,7 @@ import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
 import { RouterLink } from 'vue-router'
 import type { UserType } from '@/types/api/user'
+import type { Book } from '@/types/api/book'
 
 
 export const columns: ColumnDef<UserType>[] = [
@@ -17,6 +18,16 @@ export const columns: ColumnDef<UserType>[] = [
       const category = row.original.top_category
       return h('span', { class: 'font-regular' }, category.replace('[', '').replace(']', '') || 'N/A')
     }
+  },
+  {
+      accessorKey: 'top_rated_books',
+      header: 'Libros Mejor Calificados',
+      cell: ({ row }) => {
+        const books = row.original.top_books || []
+        return h('div', { class: 'flex flex-col gap-1 max-w-[200px]' }, books.map((book: Book) => 
+          h('span', { class: 'font-regular truncate', title: book.title }, book.title)
+        ))
+      }
   },
   {
     id: 'acciones',

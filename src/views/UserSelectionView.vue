@@ -65,7 +65,7 @@ onMounted(() => {
     <p class="text-center text-muted-foreground mb-2">
       Selecciona un usuario para ver las recomendaciones personalizadas basadas en su historial de compras.
     </p>
-    <div class="max-w-3xl mx-auto">
+    <div class="mx-auto">
     <div class="flex items-center justify-between py-4">
       <Input
         v-model="searchQuery"
