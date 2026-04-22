@@ -69,7 +69,7 @@ onMounted(() => {
     <div class="flex items-center justify-between py-4">
       <Input
         v-model="searchQuery"
-        placeholder="Buscar por categoría"
+        placeholder="Buscar por ID o categoría"
         class="w-full"
       />
       <span v-if="loading" class="text-sm text-muted-foreground animate-pulse">
