@@ -2,7 +2,7 @@
 import { onMounted, ref, watch } from 'vue';
 import { getSimilarBooksImplicit } from '@/services/api';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import type { Book } from '@/types/api/book';
+import type { SimilarBookRecommendation, SimilarBooksResponse } from '@/types/api/similarBookRecommendation';
 import BookItem from './BookItem.vue';
 import { Separator } from './ui/separator';
 
@@ -10,7 +10,7 @@ const props = defineProps<{
     bookId: string;
 }>();
 
-const recommendations = ref([] as any[]);
+const recommendations = ref([] as SimilarBookRecommendation[]);
 
 const fetchSimilarBooks = async () => {
     try {
@@ -29,7 +29,7 @@ watch(() => props.bookId, async () => {
 </script>
 
 <template>
-    <h3 class="text-2xl text-center font-semibold mt-6">Libros Similares</h3>
+    <h3 class="text-2xl text-center font-semibold mt-6">A los usuarios también les gustan</h3>
     <Separator class="mb-6"/>
     <Carousel
     class="max-w-4xl mx-auto my-0"
