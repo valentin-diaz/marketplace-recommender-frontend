@@ -15,6 +15,8 @@ import { Input } from '@/components/ui/input'
 const props = defineProps({
     book: {type: Object as () => Book, required: true}
 })
+
+console.log('BookItem props:', props.book)
 </script>
 
 <template>

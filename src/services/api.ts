@@ -72,10 +72,19 @@ export const getYouWouldLoveBook = async (userId: number) => {
   }
 }
 
-export const getSimilarBooks = async (bookId: string) => {
-  return books.data as Book[]
+export const getTop5RecommendedBooks = async (userId: number) => {
   try {
-    const response = await client.get(`/books/${bookId}/similar`)
+    const response = await client.get(`/recommendations/top-5/${userId}`)
+    return response.data
+  } catch (error) {
+    console.error(`Error fetching top recommended books for user ${userId}:`, error)
+    throw error
+  }
+}
+
+export const getSimilarBooksImplicit = async (bookId: string) => {
+  try {
+    const response = await client.get(`/recommendations/similars-implicit/${bookId}`)
     return response.data
   } catch (error) {
     console.error('Error fetching similar books:', error)

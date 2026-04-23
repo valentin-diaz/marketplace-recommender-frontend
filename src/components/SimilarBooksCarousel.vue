@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
-import { getSimilarBooks } from '@/services/api';
+import { getSimilarBooksImplicit } from '@/services/api';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import type { Book } from '@/types/api/book';
 import BookItem from './BookItem.vue';
@@ -10,13 +10,14 @@ const props = defineProps<{
     bookId: string;
 }>();
 
-const similarBooks = ref<Book[]>([]);
+const recommendations = ref([] as any[]);
 
 const fetchSimilarBooks = async () => {
     try {
-        const response = await getSimilarBooks(props.bookId);
-        similarBooks.value = response;
-        console.log('Similar books:', similarBooks.value);
+        const response = await getSimilarBooksImplicit(props.bookId);
+        console.log(response);
+        recommendations.value = response.similar_books;
+        console.log('Similar books:', recommendations.value);
     } catch (error) {
         console.error('Error fetching similar books:', error);
     }
@@ -39,8 +40,8 @@ watch(() => props.bookId, async () => {
     }"
   >
     <CarouselContent class="ml-0">
-        <CarouselItem v-for="(book, index) in similarBooks" :key="book.id" class="pl-2 md:basis-1/4 basis-1/2 sm:basis-1/3">
-            <BookItem :book="book" class="min-w-100"/>
+        <CarouselItem v-for="(recommendation, index) in recommendations" :key="recommendation.book.id" class="pl-2 md:basis-1/4 basis-1/2 sm:basis-1/3">
+            <BookItem :book="recommendation.book" class="min-w-100"/>
         </CarouselItem>
     </CarouselContent>
     <CarouselPrevious />
