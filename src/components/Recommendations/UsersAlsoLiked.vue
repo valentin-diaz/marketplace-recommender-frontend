@@ -3,7 +3,7 @@ import { getSimilarBooksImplicit } from '@/services/api';
 import Container from '../Container.vue';
 import { onMounted, watch ,reactive } from 'vue';
 import type { Book } from '@/types/api/book';
-import type { SimilarBookRecommendation } from '@/types/api/similarBookRecommendation';
+import type { ImplicitBookRecommendation } from '@/types/api/similarBookRecommendation';
 import RecommendationsCarousel from './RecommendationsCarousel.vue';
 import Explanation from './Explanation.vue';
 
@@ -12,7 +12,7 @@ const props = defineProps<{
 }>();
 
 const booksState = reactive({
-    recommendations: [] as SimilarBookRecommendation[],
+    recommendations: [] as ImplicitBookRecommendation[],
     isLoading: true,
 });
 

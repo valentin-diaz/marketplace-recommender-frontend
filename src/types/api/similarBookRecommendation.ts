@@ -1,10 +1,10 @@
 import type { Book } from "./book";
 
-export interface SimilarBookRecommendation {
+export interface ImplicitBookRecommendation {
   book: Book;
-  similarity_score: number;
+  score: number;
 }
 
-export interface SimilarBooksResponse {
-  similar_books: SimilarBookRecommendation[];
+export interface ImplicitBooksResponse {
+  similar_books: ImplicitBookRecommendation[];
 }

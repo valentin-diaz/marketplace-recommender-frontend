@@ -2,13 +2,13 @@
 import { onMounted, ref, watch } from 'vue';
 import { getSimilarBooksImplicit } from '@/services/api';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import type { SimilarBookRecommendation, SimilarBooksResponse } from '@/types/api/similarBookRecommendation';
+import type { ImplicitBookRecommendation, ImplicitBooksResponse } from '@/types/api/similarBookRecommendation';
 import BookItem from '../BookItem.vue';
 import { Separator } from '../ui/separator';
 import { truncateNumber } from '@/utils/utils';
 
 const props = defineProps<{
-    recommendations: SimilarBookRecommendation[];
+    recommendations: ImplicitBookRecommendation[];
 }>();
 
 </script>
@@ -24,7 +24,7 @@ const props = defineProps<{
   >
     <CarouselContent class="ml-0">
         <CarouselItem v-for="(recommendation, index) in recommendations" :key="recommendation.book.id" class="pl-2 basis-1/2 sm:basis-1/3">
-            <BookItem :book="recommendation.book" :score="truncateNumber(recommendation.similarity_score, 2)" class="min-w-100"/>
+            <BookItem :book="recommendation.book" :score="truncateNumber(recommendation.score, 2)" class="min-w-100"/>
         </CarouselItem>
     </CarouselContent>
     <CarouselPrevious />
