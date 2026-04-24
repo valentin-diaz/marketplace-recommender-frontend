@@ -11,9 +11,11 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { truncateText } from '@/utils/utils'
 
 const props = defineProps({
-    book: {type: Object as () => Book, required: true}
+    book: {type: Object as () => Book, required: true},
+    score: {type: String, required: false},
 })
 
 console.log('BookItem props:', props.book)
@@ -23,7 +25,7 @@ console.log('BookItem props:', props.book)
   <router-link :to="`/books/${props.book.id}`" class="w-full">
   <Card class="h-full p-0 gap-0 rounded-none hover:shadow-lg transition-shadow duration-300">
     <CardHeader class="w-full p-0 mb-0">
-        <div class="h-80">
+        <div class="h-60">
         <img 
             :src="props.book.image_url" 
             alt="Book Cover" 
@@ -32,8 +34,11 @@ console.log('BookItem props:', props.book)
         </div>
     </CardHeader>
     <CardContent class="px-3 py-3 mt-0">
-      <CardTitle class="mb-4">{{ props.book.title }}</CardTitle>
-      <CardDescription>{{ props.book.author_name }}</CardDescription>
+      <CardTitle class="mb-4">{{ truncateText(props.book.title, 30) }}</CardTitle>
+      <CardDescription>
+        <span class="font-semibold">{{truncateText(props.book.author_name, 30) }}</span> 
+        <p v-if="props.score" class="text-sm text-gray-500 mt-1">Score: {{ props.score }}</p>
+      </CardDescription>
     </CardContent>
   </Card>
     </router-link>

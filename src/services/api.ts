@@ -59,6 +59,16 @@ export const getUsers = async (offset: number, limit: number, search?: string) =
   }
 }
 
+export const getUser = async (userId: string) => {
+  try {
+    const response = await client.get(`/users/${userId}`)
+    return response.data
+  } catch (error) {
+    console.error(`Error fetching user ${userId}:`, error)
+    throw error
+  }
+}
+
 export const getYouWouldLoveBook = async (userId: number) => {
   try {
     return {
