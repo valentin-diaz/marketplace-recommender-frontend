@@ -2,7 +2,7 @@ import type { Book } from "./book";
 
 export interface TopBookRecommendation {
   book: Book;
-  score: number;
+  predicted_rating: number;
 }
 
 export interface TopBooksResponse {
